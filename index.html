@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> temp</title>
+        <style>
+            img{
+                width: 300px;
+                height: 400px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+            body{
+                background-color:aqua;
+            }
+            #btn{
+                border-radius: 60px;
+                color: white;
+                background-color: blue;
+                border-color: crimson;
+            }
+            #check{
+                border-radius: 40px;
+                background-color:blue;
+                color: white;
+            }
+            #temp{
+                color: white;
+                background-color: crimson;
+            }
+           
+
+    
+        </style>
+        <script>
+            
+            function t(){
+                var num=document.getElementById("temp").value;
+                var sel= document.getElementById("check").value;
+                if(sel=="f"){
+                var Fah = (num *(9/5))+32;
+                document.getElementById("demo").innerHTML="Temperature in fahrenheit is"+" "+Fah + "&deg;F";
+                document.getElementById("meters").style.witdh=Fah;
+                }
+                else if(sel=="c"){
+                var Cel =(num-32)*(5/9);
+                document.getElementById("demo").innerHTML="Temperature in celsius is"+" "+Cel +  "&deg;C";
+            }
+            else{
+                document.getElementById("demo").innerHTML="text box in empty";
+            }
+            }
+            function i(){
+            document.getElementById("image").src= "tempw.gif";
+            }           
+        </script>
+    </head>
+    <body>
+        <img id="image" src="temp.jpg" alt="">
+        <div id="meters"></div>
+        <hr>
+        <div style="text-align: center; margin-top: 2%;">
+        <form>
+        <h1>Temperature Convertor</h1>
+        <input type="text" id="temp">
+        <select id="check">
+            <option>choose</option>
+            <option value="f">Fahrenheit</option>
+            <option value="c">Celsius</option>
+            <input type="button"  onclick="t(); i()" value="get result" id="btn">
+        </select>
+        </form>
+        <br>
+        <p id="demo">RESULT</p>
+        </div>
+       
+    </body>
+</html>
